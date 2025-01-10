@@ -1,0 +1,43 @@
+name: your_journal
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^3.10.0
+  firebase_auth: ^5.4.0
+  google_fonts: ^6.2.1
+  cupertino_icons: ^1.0.8
+  fluttertoast: ^8.2.10
+  table_calendar: ^3.2.0
+  intl: ^0.20.1
+  sqflite: ^2.4.1
+  path: ^1.9.0
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+assets:
+    - assets/images/book.png
+    - assets/images/icon.png
+    - assets/images/mountain.png
+    - assets/images/peakpx.png
+    - assets/images/purple.png
+    - assets/images/spalsh.png
+
+fonts:
+    - family: Italianno
+      fonts:
+        - asset: assets/fonts/Italianno-Regular.ttf
+
