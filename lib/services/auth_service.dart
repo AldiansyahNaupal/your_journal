@@ -44,9 +44,6 @@ class AuthService {
         fontSize: 14.0,
       );
     }
-    catch(e){
-
-    }
 
   }
 
