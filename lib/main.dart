@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-  );
-  
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -16,9 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Login()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Login());
   }
 }
