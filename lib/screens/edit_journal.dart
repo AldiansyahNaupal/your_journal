@@ -57,8 +57,13 @@ class _EditJournalState extends State<EditJournal> {
   }
 
   void _save(DateTime day) async {
-    if (_titleControl.text.isEmpty || _titleControl.text == '') return;
-    if (_contentControl.text.isEmpty || _contentControl.text == '') return;
+    if (_titleControl.text.isEmpty ||
+        _titleControl.text == '' ||
+        _contentControl.text.isEmpty ||
+        _contentControl.text == '') {
+      Fluttertoast.showToast(msg: 'Please enter something in title or content');
+      return;
+    }
 
     await EntryService()
         .updateEntry(
@@ -66,10 +71,11 @@ class _EditJournalState extends State<EditJournal> {
       title: _titleControl.text,
       subtitle: _contentControl.text,
       mood: _mood.name,
-      day: _day.millisecondsSinceEpoch.toString(),
+      day: day.millisecondsSinceEpoch.toString(),
       date: _selectedDate.millisecondsSinceEpoch.toString(),
     )
         .then((_) {
+      if (!mounted) return;
       Fluttertoast.showToast(msg: 'Entry updated successfully !!');
       Navigator.pop(context);
     });

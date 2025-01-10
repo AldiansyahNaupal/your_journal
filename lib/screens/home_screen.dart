@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (didPop) => _onWillPop(),
+      onPopInvokedWithResult: (didPop, result) => _onWillPop(),
       child: Scaffold(
         extendBody: true,
         extendBodyBehindAppBar: true,

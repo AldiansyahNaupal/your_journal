@@ -93,7 +93,6 @@ class _AddJournalState extends State<AddJournal> {
                 CupertinoButton(
                   padding: const EdgeInsets.all(0),
                   onPressed: () {
-                    if (!mounted) return;
                     setState(() => _selectedDate = day ?? DateTime.now());
                     Navigator.pop(context);
                   },
@@ -144,6 +143,7 @@ class _AddJournalState extends State<AddJournal> {
       date: _selectedDate.millisecondsSinceEpoch.toString(),
     )
         .then((_) {
+      if (!mounted) return;
       Fluttertoast.showToast(msg: 'Entry added successfully !!');
       Navigator.pop(context);
     });
@@ -223,43 +223,3 @@ class _AddJournalState extends State<AddJournal> {
     );
   }
 }
-
-
-
-/*
-
-Future _showdatePicker() async {
-    DateTime? selectedDay = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2016),
-      lastDate: DateTime(2030),
-      keyboardType: TextInputType.datetime,
-      initialEntryMode: DatePickerEntryMode.input,
-      builder: (context, child) {
-        return Theme(
-          data: Theme.of(context).copyWith(
-            colorScheme: const ColorScheme.light(
-              primary: Colors.white, // selected backgrond color
-              onPrimary: Colors.black, // selected text color
-              onSurface: Colors.white, // date text
-              onBackground: Colors.white, // line
-              surface: Color.fromARGB(255, 4, 27, 46), // background
-            ),
-            textButtonTheme: TextButtonThemeData(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white, // button text color
-              ),
-            ),
-          ),
-          child: child!,
-        );
-      },
-    );
-
-    if (selectedDay == null) return;
-
-    setState(() => _selectedDate = selectedDay);
-  }
-
- */
