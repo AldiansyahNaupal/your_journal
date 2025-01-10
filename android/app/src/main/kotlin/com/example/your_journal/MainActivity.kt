@@ -1,4 +1,4 @@
-package com.example.your_journal
+package com.binus.yourjournal
 
 import io.flutter.embedding.android.FlutterActivity
 

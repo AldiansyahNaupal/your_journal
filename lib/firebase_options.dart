@@ -64,8 +64,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
-    iosClientId: '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
-    iosBundleId: 'com.example.yourJournal',
+    iosClientId:
+        '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
+    iosBundleId: 'com.binus.yourJournal',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -74,8 +75,9 @@ class DefaultFirebaseOptions {
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
-    iosClientId: '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
-    iosBundleId: 'com.example.yourJournal',
+    iosClientId:
+        '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
+    iosBundleId: 'com.binus.yourJournal',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
