@@ -60,23 +60,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC6XXODpQ4YpAKXKmkyitQPrI_jlgccFrE',
-    appId: '1:855503520879:ios:5e43e6fa524d6510b9799a',
+    appId: '1:855503520879:ios:1dda5082b5aec917b9799a',
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
     iosClientId:
-        '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
+        '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
     iosBundleId: 'com.binus.yourjournal',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyC6XXODpQ4YpAKXKmkyitQPrI_jlgccFrE',
-    appId: '1:855503520879:ios:5e43e6fa524d6510b9799a',
+    appId: '1:855503520879:ios:1dda5082b5aec917b9799a',
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
     iosClientId:
-        '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
+        '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
     iosBundleId: 'com.binus.yourjournal',
   );
 
