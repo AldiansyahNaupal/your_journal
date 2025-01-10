@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
     iosClientId:
         '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
-    iosBundleId: 'com.binus.yourJournal',
+    iosBundleId: 'com.binus.yourjournal',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -77,7 +77,7 @@ class DefaultFirebaseOptions {
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
     iosClientId:
         '855503520879-rouet0g0jjms6ahi82t93g04j2r8c45a.apps.googleusercontent.com',
-    iosBundleId: 'com.binus.yourJournal',
+    iosBundleId: 'com.binus.yourjournal',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
