@@ -93,6 +93,7 @@ class _AddJournalState extends State<AddJournal> {
                 CupertinoButton(
                   padding: const EdgeInsets.all(0),
                   onPressed: () {
+                    if (!mounted) return;
                     setState(() => _selectedDate = day ?? DateTime.now());
                     Navigator.pop(context);
                   },
