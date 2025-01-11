@@ -64,8 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
-    iosClientId:
-        '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
+    iosClientId: '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
     iosBundleId: 'com.binus.yourjournal',
   );
 
@@ -75,8 +74,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '855503520879',
     projectId: 'your-journal-b7fcf',
     storageBucket: 'your-journal-b7fcf.firebasestorage.app',
-    iosClientId:
-        '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
+    iosClientId: '855503520879-jk85fhbovh71s7hvlpjn70d1o9k7lggp.apps.googleusercontent.com',
     iosBundleId: 'com.binus.yourjournal',
   );
 

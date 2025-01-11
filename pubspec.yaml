@@ -1,5 +1,5 @@
 name: your_journal
-description: "A new Flutter project."
+description: "A Flutter Journal project."
 publish_to: 'none'
 version: 0.1.0
 
@@ -26,10 +26,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-<<<<<<< HEAD
-  flutter_lints: ^5.0.0
-=======
->>>>>>> 3503ed6 (second commit)
 
 flutter:
   uses-material-design: true

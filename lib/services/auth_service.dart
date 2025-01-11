@@ -34,12 +34,9 @@ class AuthService {
         textColor: Colors.white,
         fontSize: 14.0,
       );
-<<<<<<< HEAD
+    } catch (e) {
+      // Handle the error or log it
     }
-
-=======
-    } catch (e) {}
->>>>>>> 3503ed6 (second commit)
   }
 
   Future<void> signin(
@@ -70,7 +67,9 @@ class AuthService {
         textColor: Colors.white,
         fontSize: 14.0,
       );
-    } catch (e) {}
+    } catch (e) {
+      // Handle the error or log it
+    }
   }
 
   Future<void> signout({required BuildContext context}) async {

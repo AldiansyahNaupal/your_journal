@@ -297,8 +297,6 @@ class BottomContainer extends StatelessWidget {
     );
   }
 }
-<<<<<<< HEAD
-=======
 
 class BottomButtons extends StatelessWidget {
   final IconData icon;
@@ -320,7 +318,7 @@ class BottomButtons extends StatelessWidget {
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withAlpha((0.2 * 255).toInt()),
             spreadRadius: 2,
             blurRadius: 5,
           ),
@@ -335,4 +333,3 @@ class BottomButtons extends StatelessWidget {
     );
   }
 }
->>>>>>> 3503ed6 (second commit)
