@@ -19,22 +19,28 @@ dependencies:
   sqflite: ^2.4.1
   path: ^1.9.0
   path_provider: ^2.1.5
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.2
+  cloud_firestore: ^5.6.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+<<<<<<< HEAD
   flutter_lints: ^5.0.0
+=======
+>>>>>>> 3503ed6 (second commit)
 
 flutter:
   uses-material-design: true
-
-assets:
+  assets:
     - assets/images/book.png
-    - assets/images/icon.png
-    - assets/images/mountain.png
-    - assets/images/peakpx.png
-    - assets/images/purple.png
-    - assets/images/spalsh.png
+    - assets/images/icon.jpg
+    - assets/images/mountain.jpg
+    - assets/images/peakpx.jpg
+    - assets/images/purple.jpg
+    - assets/images/splash.png
+
 
 fonts:
     - family: Italianno

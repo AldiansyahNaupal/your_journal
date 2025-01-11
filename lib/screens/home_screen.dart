@@ -9,6 +9,7 @@ import '../screens/add_journal.dart';
 import '../screens/calendar.dart';
 import '../screens/mine.dart';
 import '../screens/view_journal.dart';
+import '../services/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,9 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool _searching = false;
-
   final List<Journal> _searchList = [];
-
   List<Journal> _list = [];
 
   bool _onWillPop() {
@@ -76,7 +75,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   onChanged: (val) async {
                     _searchList.clear();
-
                     for (var i in _list) {
                       if (i.title.toLowerCase().contains(val.toLowerCase()) ||
                           i.subtitle
@@ -85,11 +83,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         _searchList.add(i);
                       }
                     }
-
                     setState(() => _searchList);
                   },
                 )
-              : null,
+              : Text(
+                  'Hallo, Selamat Datang',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
           actions: [
             IconButton(
               onPressed: () => setState(() {
@@ -98,6 +102,32 @@ class _HomeScreenState extends State<HomeScreen> {
               }),
               icon: Icon(
                   _searching ? CupertinoIcons.clear_circled : Icons.search),
+              color: Colors.white,
+            ),
+            IconButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('Logout'),
+                    content: Text('Are you sure you want to logout?'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('Cancel'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          AuthService().signout(context: context);
+                        },
+                        child:
+                            Text('Logout', style: TextStyle(color: Colors.red)),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              icon: Icon(Icons.logout),
               color: Colors.white,
             ),
           ],
@@ -154,7 +184,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               int.parse(a.day)));
                     },
                   );
-                  // setState(() => );
                   return SingleChildScrollView(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -167,7 +196,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             itemCount: _searching
                                 ? _searchList.length
                                 : snapshot.data!.length,
-                            // itemCount: snapshot.data!.length,
                             itemBuilder: (ctx, i) {
                               if (!_searching) {
                                 return JournalCard(
@@ -241,7 +269,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class BottomContainer extends StatelessWidget {
   final void Function() calendarOnTap;
-
   final void Function() mineOnTap;
 
   const BottomContainer({
@@ -270,3 +297,42 @@ class BottomContainer extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+class BottomButtons extends StatelessWidget {
+  final IconData icon;
+  final String toolTip;
+  final void Function() onPressed;
+
+  const BottomButtons({
+    super.key,
+    required this.icon,
+    required this.toolTip,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      child: IconButton(
+        onPressed: onPressed,
+        icon: Icon(icon),
+        tooltip: toolTip,
+        color: Colors.black,
+      ),
+    );
+  }
+}
+>>>>>>> 3503ed6 (second commit)

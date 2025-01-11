@@ -119,7 +119,7 @@ class _MineState extends State<Mine> {
                         child: Text(
                           'A Dairy Means Yes Indeed',
                           style: TextStyle(
-                            fontSize: 36,
+                            fontSize: 28,
                             letterSpacing: 1.5,
                             color: Colors.white,
                             fontFamily: 'Italianno',
