@@ -1,0 +1,46 @@
+name: Build & Deploy Flutter Web to gh-pages
+
+on:
+  workflow_dispatch:  # Manual trigger for the workflow
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3  # Check out the repository code
+
+      - name: Extract Flutter version from pubspec.yaml  # Extract the Flutter version from pubspec.yaml
+        id: flutter-version                              # Save the extracted version to the environment file
+        run: |
+          FLUTTER_VERSION=$(grep "flutter:" pubspec.yaml | awk '{print $2}')  
+          echo "FLUTTER_VERSION=$FLUTTER_VERSION" >> $GITHUB_ENV  
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:        
+          channel: stable  # Use the stable Flutter channel
+          flutter-version: "${{ env.FLUTTER_VERSION }}"  # Use the extracted Flutter version
+
+      - name: Enable Flutter web
+        run: flutter config --enable-web  # Enable Flutter web support
+
+      - name: Get repository name
+        id: repo-name
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV  
+        # Extract and save the repository name to the environment file
+
+      - name: Install dependencies
+        run: flutter pub get  # Install Flutter dependencies
+
+      - name: Build Flutter Web
+        run: flutter build web --release --base-href="/${{ env.REPO_NAME }}/"  # Build the Flutter web app with the correct base href
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token for authentication
+          publish_dir: build/web  # Specify the directory to publish
+          publish_branch: gh-pages  # Deploy to the gh-pages branch
+          force_orphan: true  # Create a new orphan branch for deployment
